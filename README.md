@@ -20,7 +20,7 @@ Here is what must currently be done to install this script.
 # This loads the tiyhw file at the start of the terminal session.
 eval ". ~/bin/tiyhw.sh"
 # This sets an alias so the user can reload tiyhw.sh easily. 
-alias tiyhw=". ~/bin/tiyhw.sh"
+alias tiy=". ~/bin/tiyhw.sh"
 ```
 
 - Now in your terminal, type "tiy is_working" (without the "") to test. This script will install homebrew, git, and hub as needed, then print something in your terminal if it is working correctly.
