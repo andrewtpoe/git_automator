@@ -13,13 +13,13 @@ Been a steep learning curve, but a fun one. I plan to add more features to this 
 
 Here is what must currently be done to install this script.
 
-- Place this file in ~/bin 
+- Place this file in ~/bin
 - Add the following to your .bash_profile
 
 ```bash
 # This loads the tiyhw file at the start of the terminal session.
 eval ". ~/bin/tiyhw.sh"
-# This sets an alias so the user can reload tiyhw.sh easily. 
+# This sets an alias so the user can reload tiyhw.sh easily.
 alias tiy=". ~/bin/tiyhw.sh"
 ```
 
