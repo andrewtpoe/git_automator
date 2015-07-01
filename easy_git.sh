@@ -6,15 +6,15 @@
 # at The Iron Yard by automating the many git and hub commands frequently used.
 #
 # Place this file in ~/bin
-# 
+#
 # Add the following to your .bash_profile (uncomment it first, duh)
-# 
+#
 # # This loads the tiyhw file at the start of the terminal session.
 # eval ". ~/bin/tiyhw.sh"
-# # This sets an alias so the user can reload tiyhw.sh easily. 
+# # This sets an alias so the user can reload tiyhw.sh easily.
 # alias tiy=". ~/bin/tiyhw.sh"
 #
-# Now in your terminal, type "tiy is_working" (without the "") to test. This 
+# Now in your terminal, type "tiy is_working" (without the "") to test. This
 # script will install homebrew, git, and hub as needed, then print something
 # in your terminal if it is working correctly.
 #
@@ -22,12 +22,12 @@
 
 
 ###############################################################################
-# 
+#
 # This section of code declares the useful functions that will be found within.
-# 
+#
 ###############################################################################
 
-# This script requires homebrew, git, and hub. Calling system_check determines 
+# This script requires homebrew, git, and hub. Calling system_check determines
 # if the user has these and installs them if not.
 function system_check {
   # Check for homebrew
@@ -39,7 +39,7 @@ function system_check {
   # Check for hub
   if test ! $(which hub); then
     echo "Installing hub..."
-    brew istall hub
+    brew install hub
   fi
 
   # Check for git
@@ -53,20 +53,41 @@ function system_check {
 function new_repo {
 
   # Intro and explain the script.
-  echo "This function creates a new repository on your computer and on GitHub."
+  echo "This function automates creating a new git repository on your computer and GitHub."
   echo ""
+  echo "First, you will be asked for the name of your new directory/ repository"
+  echo "Next you will be asked for your project's name, it will be in your README file"
+  echo ""
+  echo "Finally, these commands will be run:"
+  echo ""
+  echo "mkdir: < New Directory Name >       # Creates the folder for your new repository"
+  echo "cd < New Directory Name >           # Moves you into the new folder"
+  echo "git init                            # Initializes this folder as new repository"
+  echo "hub create                          # Initializes your new repository on Github"
+  echo "git add -A                          # Add all the files created so far."
+  echo "git commit -m 'Initial Commit'      # Creates the comment on the first commit"
+  echo "git push origin master              # Pushes everything onto GitHub"
+  echo "git checkout -b dev                 # Makes and checks out the dev branch"
+  echo ""
+  read -p "Type 'y' to proceed: " exit_func
+  echo ""
+################ edits stopped here ################################################
+
+  # See if the user would like to exit this function.
+  if [ "$exit_func" == "y" ]; then
 
   # Gather the name for the folder and the repo
   read -p "Enter a new directory name: " folder
   echo ""
 
-  # See if the user would like to exit this function.
-  if [ "$folder" != "end" ]; then 
-    # Add in error checking to determine if this folder already exists. 
+  # Create the README file for this repository
+  read -p "Enter project title: " project_title
+
+    # Add in error checking to determine if this folder already exists.
     # Proceed if no folder, display error and exit if folder does exist.
     if [[ ! -e $folder ]]; then
       # Create the folder and make it the focus.
-      mkdir -p $folder
+      mkdir $folder
       cd $folder
 
       # Initialize an empty Git repository.
@@ -75,9 +96,7 @@ function new_repo {
       # Initialize repo on GitHub
       hub create
 
-      # Create the README file for this repository
-      read -p "Enter project title: " project_title
-
+      # Add the project title to the README
       echo "$project_title" > README.md
 
       # Add files
@@ -103,14 +122,14 @@ function new_repo {
       echo ""
     fi
   else
-    echo "Aborting the create new repo process"
+    echo "Aborting the create-new-repo process."
     echo ""
   fi
   unset folder
 }
 
 
-# This method sets the branch variable to the name of the users currently 
+# This method sets the branch variable to the name of the users currently
 # active git branch.
 function determine_branch {
   if branch=$(git symbolic-ref --short -q HEAD)
