@@ -24,5 +24,5 @@ source ~/.bash_profile
 # Ensure everything is working correctly
 echo "Everything appears to have worked correctly. "
 echo ""
-echo "Please type < easyg is_working > to confirm."
+echo "Please type | easyg is_working | to confirm."
 echo ""
