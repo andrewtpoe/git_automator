@@ -12,7 +12,7 @@ This script will install homebrew, git, and hub as needed, then print something 
 
 You should now have access to these functions by typing:
 ```bash
-easyg <function_name>
+easyg function_name
 ```
 
 The functions currently in this script include:
