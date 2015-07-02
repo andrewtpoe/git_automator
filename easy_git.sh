@@ -152,7 +152,7 @@ if [ "$1" = "new_repo" ]; then
   new_repo
 
 elif [ "$1" = "is_working" ]; then
-  echo "The tiy script is working correctly. Congratulations!"
+  echo "The easy_git script is working correctly. Congratulations!"
 
 elif [ "$1" = "first_run" ]; then
   :

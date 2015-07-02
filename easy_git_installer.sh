@@ -12,6 +12,7 @@ echo eval ". ~/bin/easy_git.sh first_run"
 # Add the correct lines into that bash-profile
 echo "alias easyg=". ~/bin/easy_git.sh"" >> ~/.bash_profile
 
+# Ensure everything is working correctly
+easyg is_working
+
 # Finally, delete this script.
-cd ../
-rm easy_git_installer.sh
