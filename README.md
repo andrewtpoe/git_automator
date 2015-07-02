@@ -5,14 +5,14 @@ I plan to add more functions to this as I go along. If you have a series of git/
 Install this script by entering the following command into your terminal:
 
 ```
-bash <(curl -sS https://raw.githubusercontent.com/andrewtpoe/git_automator/dev/easy_git_installer.sh)
+bash <(curl -sS https://raw.githubusercontent.com/andrewtpoe/git_automator/dev/ezgit_installer.sh)
 ```
 
 This script will install homebrew, git, and hub as needed, then print something in your terminal if it is working correctly.
 
 You should now have access to these functions by typing:
 ```bash
-easyg function_name
+ezgit function_name
 ```
 
 The functions currently in this script include:
