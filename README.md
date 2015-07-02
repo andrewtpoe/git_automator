@@ -17,8 +17,8 @@ ezgit function_name
 
 The functions currently in this script include:
 
-* create_repo  -  Creates a new directory on your computer and a new repository on GitHub. Creates a README file with the project title as the sole line. Leaves you in the directory in a branch called "dev"
+* create_repo  -  Creates a new directory on your computer and a new repository on GitHub. Creates a README file with the project title as the sole line. Creates and makes active a branch called "dev".
 
 * is_working  -  Runs a simple test to ensure the the script is installed and working correctly.
 
-* first_run - Performs a system check and installs any missing dependencies.
+* system_check - Performs a system check and installs any missing dependencies.

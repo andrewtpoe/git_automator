@@ -5,19 +5,6 @@
 # This script is designed to make the homework git workflow easier for students
 # at The Iron Yard by automating the many git and hub commands frequently used.
 #
-# Place this file in ~/bin
-#
-# Add the following to your .bash_profile (uncomment it first, duh)
-#
-# # This loads the tiyhw file at the start of the terminal session.
-# eval ". ~/bin/tiyhw.sh"
-# # This sets an alias so the user can reload tiyhw.sh easily.
-# alias tiy=". ~/bin/tiyhw.sh"
-#
-# Now in your terminal, type "tiy is_working" (without the "") to test. This
-# script will install homebrew, git, and hub as needed, then print something
-# in your terminal if it is working correctly.
-#
 ###############################################################################
 
 
@@ -32,19 +19,22 @@
 function system_check {
   # Check for homebrew
   if test ! $(which brew); then
-    echo "Installing homebrew..."
+    echo "Found homebrew is not installed. Installing homebrew..."
+    echo ""
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
   # Check for hub
   if test ! $(which hub); then
-    echo "Installing hub..."
+    echo "Found hub is not installed. Installing hub..."
+    echo ""
     brew install hub
   fi
 
   # Check for git
   if test ! $(which git); then
-    echo "Installing git..."
+    echo "Found git is not installed. Installing git..."
+    echo ""
     brew install git
   fi
 }
@@ -109,7 +99,8 @@ function create_repo {
 
       # Create and open a new branch that is not the master
       git checkout -b dev
-      echo "You now have a new git project and are working on the 'dev' branch."
+      echo "You now have a new git repository with a dev branch."
+      echo "Please type | cd $folder | to get started working."
       echo ""
 
     else
@@ -149,12 +140,13 @@ if [ "$1" = "create_repo" ]; then
   create_repo
 
 elif [ "$1" = "is_working" ]; then
-  echo "The easy_git script is working correctly. Congratulations!"
+  system_check
+  echo "ezgit is working correctly. Congratulations!"
 
-elif [ "$1" = "first_run" ]; then
+elif [ "$1" = "system_check" ]; then
   system_check
 
 else
-  echo "tiy does not have a function by that name."
+  echo "ezgit does not have a function by that name."
 
 fi
