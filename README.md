@@ -5,7 +5,8 @@ I plan to add more features to this as I go along. If you have a series of git/h
 Install this script by entering the following command into your terminal:
 
 ```
-bash <(curl -sS https://raw.githubusercontent.com/andrewtpoe/git_automator/dev/easy_git_installer.sh) ```
+bash <(curl -sS https://raw.githubusercontent.com/andrewtpoe/git_automator/dev/easy_git_installer.sh)
+```
 
 This script will install homebrew, git, and hub as needed, then print something in your terminal if it is working correctly.
 

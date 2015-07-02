@@ -11,7 +11,12 @@ curl -o ~/bin/easy_git.sh https://raw.githubusercontent.com/andrewtpoe/git_autom
 eval ". ~/bin/easy_git.sh first_run"
 
 # Add the correct lines into that bash-profile
+echo "##################################################" >> ~/.bash_profile
+echo "# This section adds the alias for easy_git" >> ~/.bash_profile
+echo "" >> ~/.bash_profile
 echo "alias easyg=". ~/bin/easy_git.sh"" >> ~/.bash_profile
+echo "" >> ~/.bash_profile
+echo "##################################################" >> ~/.bash_profile
 
 # Reload the bash_profile
 . ~/.bash_profile
