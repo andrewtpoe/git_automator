@@ -50,7 +50,7 @@ function system_check {
 }
 
 # This method creates a new github repository on your computer and on github.
-function new_repo {
+function create_repo {
 
   # Intro and explain the script.
   echo "This function automates creating a new git repository on your computer and GitHub."
@@ -71,7 +71,6 @@ function new_repo {
   echo ""
   read -p "Type 'y' to proceed: " exit_func
   echo ""
-################ edits stopped here ################################################
 
   # See if the user would like to exit this function.
   if [ "$exit_func" == "y" ]; then
@@ -146,8 +145,8 @@ function determine_branch {
 #
 ###############################################################################
 
-if [ "$1" = "new_repo" ]; then
-  new_repo
+if [ "$1" = "create_repo" ]; then
+  create_repo
 
 elif [ "$1" = "is_working" ]; then
   echo "The easy_git script is working correctly. Congratulations!"
