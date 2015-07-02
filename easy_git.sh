@@ -146,8 +146,6 @@ function determine_branch {
 #
 ###############################################################################
 
-system_check
-
 if [ "$1" = "new_repo" ]; then
   new_repo
 
@@ -155,7 +153,7 @@ elif [ "$1" = "is_working" ]; then
   echo "The easy_git script is working correctly. Congratulations!"
 
 elif [ "$1" = "first_run" ]; then
-  :
+  system_check
 
 else
   echo "tiy does not have a function by that name."

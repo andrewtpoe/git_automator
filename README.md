@@ -5,16 +5,16 @@ I plan to add more features to this as I go along. If you have a series of git/h
 Install this script by entering the following command into your terminal:
 
 ```
-curl -s https://raw.githubusercontent.com/andrewtpoe/git_automator/dev/easy_git_installer.sh | bash
-```
+bash <(curl -sS https://raw.githubusercontent.com/andrewtpoe/git_automator/dev/easy_git_installer.sh) ```
 
 This script will install homebrew, git, and hub as needed, then print something in your terminal if it is working correctly.
 
-- Now in your terminal, type < easyg is_working > to test.
-
+You should now have access to these functions by typing easyg and the function name.
 
 Here is a list of functions currently in this script:
 
 * new_repo  -  Creates a new directory on your computer and a new repository on GitHub. Creates a README file with the project title as the sole line. Leaves you in the directory in a branch called "dev"
 
 * is_working  -  Runs a simple test to ensure the the script is installed and working correctly.
+
+* first_run - Performs a system check and installs any missing dependencies.
