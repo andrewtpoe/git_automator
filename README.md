@@ -5,7 +5,7 @@ I plan to add more functions to this as I go along. If you have a series of git/
 Install this script by entering the following command into your terminal:
 
 ```
-bash <(curl -sS https://raw.githubusercontent.com/andrewtpoe/git_automator/dev/ezgit_installer.sh)
+curl -sS https://raw.githubusercontent.com/andrewtpoe/git_automator/dev/ezgit_installer.sh | bash
 ```
 
 This script will install homebrew, git, and hub as needed, then print something in your terminal if it is working correctly.
