@@ -8,7 +8,7 @@ Install this script by entering the following command into your terminal:
 curl -sS https://raw.githubusercontent.com/andrewtpoe/git_automator/dev/ezgit_installer.sh | bash
 ```
 
-This script will install homebrew, git, and hub as needed, then print something in your terminal if it is working correctly.
+This script will install homebrew, git, and hub as needed, then print something in your terminal if it is working correctly. It has been tested to work on OS X, but does not install correctly on Linux operating system.
 
 You should now have access to these functions by typing:
 ```bash
