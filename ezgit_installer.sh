@@ -4,7 +4,7 @@
 #*****************************************************************************#
 
 # cURL and install the actual ezgit script
-curl -o /usr/local/bin/ezgit https://raw.githubusercontent.com/andrewtpoe/git_automator/dev/ezgit
+curl -o /usr/local/bin/ezgit https://raw.githubusercontent.com/andrewtpoe/git_automator/master/ezgit
 
 # Change the permissions on the file to make it executable
 chmod +x /usr/local/bin/ezgit
